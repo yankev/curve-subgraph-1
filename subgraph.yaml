@@ -80,7 +80,7 @@ dataSources:
     network: mainnet
     source:
       abi: Registry
-      address: '0x7d86446ddb609ed0f5f8684acf30380a356b2b4c'
+      address: '0x90e00ace148ca3b23ac1bc8c240c2a7dd9c2d7f5'
       startBlock: 11500000
     mapping:
       kind: ethereum/events
