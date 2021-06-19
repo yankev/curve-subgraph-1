@@ -157,6 +157,7 @@ enum AssetType {
   USD
   EUR
   LINK
+  NONE 
 }
 
 type Pool @entity {

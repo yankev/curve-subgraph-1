@@ -40,6 +40,7 @@ assetTypes.set('0x2dded6da1bf5dbdf597c45fcfaa3194e53ecfeaf', 'USD')
 assetTypes.set('0xf178c0b5bb7e7abf4e12a4838c7b7c5ba2c623c0', 'LINK')
 assetTypes.set('0x36965b1a6b97c1b33416e5d53fb5621ade1f1e80', 'USD')
 assetTypes.set('0x42d7025938bec20b69cbae5a77421082407f053a', 'USD')
+assetTypes.set('0x43b4fdfd4ff969587185cdb6f0bd875c5fc83f8c', 'USD')
 
 export function getAssetType(id: string): string {
   return assetTypes.isSet(id) ? assetTypes.get(id)! : 'NONE'

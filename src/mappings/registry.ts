@@ -64,11 +64,14 @@ function getOrCreatePool(address: Address, event: ethereum.Event): Pool {
     // Pool parameters
     let params = registryContract.try_get_parameters(address)
     if (params.reverted) {
-        //pass
+      pool.A = integer.ZERO
+      pool.fee = decimal.fromBigInt(integer.ZERO, FEE_PRECISION)
+      pool.adminFee = decimal.fromBigInt(integer.ZERO, FEE_PRECISION)
     } else {
     pool.A = params.value.value0
     pool.fee = decimal.fromBigInt(params.value.value2, FEE_PRECISION)
     pool.adminFee = decimal.fromBigInt(params.value.value3, FEE_PRECISION)
+    }
 
     // Owner
     let owner = swapContract.try_owner()
@@ -108,7 +111,6 @@ function getOrCreatePool(address: Address, event: ethereum.Event): Pool {
 
     // Start indexing events from new pool
     PoolDataSource.createWithContext(address, context)
-  }
   }
 
   return pool!
